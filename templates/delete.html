@@ -1,0 +1,15 @@
+{% extends 'bootstrap/base.html' %}
+{% block  title %}削除{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>本当に削除しますか？</h1>
+    <form method="POST">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.body }}</p>
+        <p>作成日時：{{ post.created_at }}</p>
+        <input type="submit" value="削除" class="btn btn-info btn-lg m-5">
+        <a href="/" role="button" class="btn btn-info btn-lg m-5">戻る</a>
+    </form>
+</div>
+{% endblock %}

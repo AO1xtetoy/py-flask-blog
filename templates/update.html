@@ -1,0 +1,20 @@
+{% extends 'bootstrap/base.html' %}
+{% block  title %}編集{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>編集</h1>
+    <form method="POST">
+        <div>
+            <label for="title">タイトル</label>
+            <input type="text" name="title" value={{ post.title }}>
+        </div>
+        <div>
+            <label for="body">内容</label>
+            <input type="text" name="body" value={{ post.body }}>
+        </div>
+        <input type="submit" value="更新" class="btn btn-info btn-lg m-5">
+        <input type="submit" value="戻る" class="btn btn-info btn-lg m-5">
+    </form>
+</div>
+{% endblock %}

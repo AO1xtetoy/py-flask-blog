@@ -1,0 +1,19 @@
+{% extends 'bootstrap/base.html' %}
+{% block  title %}新規投稿{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>つぶやく</h1>
+    <form method="POST">
+        <div>
+            <label for="title">タイトル</label>
+            <input type="text" name="title">
+        </div>
+        <div>
+            <label for="body">内容</label>
+            <input type="text" name="body">
+        </div>
+        <input type="submit" class="btn btn-info btn-lg m-5" value="ツイート">
+    </form>
+</div>
+{% endblock %}

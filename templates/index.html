@@ -1,0 +1,21 @@
+{% extends 'bootstrap/base.html' %}
+{% block  title %}TOPページ{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>ツイッタランド</h1>
+    <a href="/create" role="button" class="btn btn-info btn-lg m-5">ツイートする</a>
+    <a href="/logout" role="button" class="btn btn-info btn-lg m-5">ログアウト</a>
+    {% for post in posts %}
+    <div class="card w-50 mb-3" style="margin: auto;">
+        <div class="card-body">
+            <h2 class="card-title">{{ post.title }}</h2>
+            <p>{{ post.body }}</p>
+            <p>{{ post.created_at }}</p>
+            <a href="/{{ post.id }}/update" role="button" class="btn btn-info">編集</a>
+            <a href="/{{ post.id }}/delete" role="button" class="btn btn-info">削除</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
