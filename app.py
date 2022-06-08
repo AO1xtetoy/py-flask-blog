@@ -43,13 +43,13 @@ class User(UserMixin, db.Model):
     password = db.Column(db.String(12), nullable=False)
 
 #ユーザーのログイン状態を取得
-# @login_manager.user_loader
-# def load_user(user_id):
-#     return User.query.get(int(user_id))
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 #TOP
 @app.route('/', methods=['GET', 'POST'])
-# @login_required
+@login_required
 def index():
     #GETの処理
     if request.method == 'GET':
@@ -99,14 +99,14 @@ def login():
 
 #ログアウト:ログインしているユーザーのみ閲覧可
 @app.route('/logout')
-# @login_required
+@login_required
 def logout():
     logout_user()
     return redirect('/login')
 
 #新規登録
 @app.route('/create', methods=['GET', 'POST'])
-# @login_required
+@login_required
 def create():
     #POSTの処理
     if request.method == 'POST':
@@ -127,7 +127,7 @@ def create():
 
 #更新
 @app.route('/<int:id>/update', methods=['GET', 'POST'])
-# @login_required
+@login_required
 def update(id):
     #選択されたidのpostを取得
     post = Post.query.get(id)
@@ -146,7 +146,7 @@ def update(id):
 
 #削除
 @app.route('/<int:id>/delete', methods=['GET', 'POST'])
-# @login_required
+@login_required
 def delete(id):
     #選択されたidのpostを取得
     post = Post.query.get(id)
