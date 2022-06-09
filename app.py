@@ -3,7 +3,7 @@ from flask import Flask
 from flask import render_template, request, redirect
 #ModuleNotFoundError: No module namedの対応
 import sys
-sys.path.append('/Users/aoisawa/project/py-flask-app2/env/lib/python3.10/site-packages')
+sys.path.append('*****PATH****')
 from flask_sqlalchemy import SQLAlchemy
 #ログイン機能
 from flask_login import UserMixin, LoginManager, login_user, logout_user, login_required
