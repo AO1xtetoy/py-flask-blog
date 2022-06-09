@@ -1,3 +1,4 @@
 blog.db
 Procfile
 static/
+requirements.txt
